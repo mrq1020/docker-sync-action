@@ -26,9 +26,9 @@ function run_with_lines() {
 
 function exec_skopeo() {
     if [ -f "${XDG_RUNTIME_DIR}/containers/auth.json" ]; then
-      docker run --rm -v ${XDG_RUNTIME_DIR}/containers/auth.json:/auth.json -e "REGISTRY_AUTH_FILE=/auth.json" quay.io/skopeo/stable:latest $@
+      docker run --rm -v ${XDG_RUNTIME_DIR}/containers/auth.json:/auth.json -e "REGISTRY_AUTH_FILE=/auth.json" quay.io/skopeo/stable:v1.1.0 $@
     else
-      docker run --rm quay.io/skopeo/stable:latest $@
+      docker run --rm quay.io/skopeo/stable:v1.1.0 $@
     fi
 }
 
