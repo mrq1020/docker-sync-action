@@ -60,7 +60,7 @@ function copy() {
 
 function install_latest_skopeo() {
     echo "::group::Pulling Latest Skopeo"
-    docker pull quay.io/skopeo/stable:latest
+    docker pull quay.io/skopeo/stable:v1.1.0
     # 判断是否执行成功
     if [ $? -ne 0 ]; then
         echo "::error::Pulling Latest Skopeo failed"
